@@ -1,3 +1,14 @@
+class Question {
+    constructor(question, options, correctAnswer) {
+        this.question = question;
+        this.options = options;
+        this.correctAnswer = correctAnswer;
+    }
+    isCorrect(option) {
+        return this.correctAnswer === option;
+    }
+}
+
 let selected = false /* why let? */
 let current = null;
 
@@ -12,6 +23,7 @@ function selectOption(option) {
       current = option;
     }
   }
+
 
 // function submitanswer(this) {
 //   if (selected) {
