@@ -19,7 +19,7 @@ const quizData = [
   ];
   
   let currentQuestionIndex = 0;
-  
+  //hello
   // DOM Elements
   const questionTitle = document.getElementById("question-title");
   const questionText = document.getElementById("question-text");
