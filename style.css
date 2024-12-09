@@ -1,47 +1,61 @@
 body {
-  background-color: #FCF9F2
-;} 
-/*What's the exact orange used in Hodie?? */
+  background-color: #FCF9F2;
+}
 
 p {
   color: black;
-  text-align: center;}
-  
-.question {width: 600px;
-    margin: 0 auto;
-    border-radius: 5px;
+  text-align: center;
+}
+
+.question {
+  width: 600px;
+  margin: 0 auto;
+  border-radius: 5px;
   background-color: #F24A0D;
-margin: 1rem auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-padding: 0.5rem; /* Adds space around the content inside the div */}
-  
- 
-.option {width: 600px;
+  margin: 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+}
+
+#options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.option {
+  display: block;
+  width: 100%;
+  max-width: 600px;
   text-align: left;
-    margin: 0 auto;
-    border-radius: 5px;
+  margin: 10px 0;
+  border-radius: 5px;
   background-color: white;
-margin: 1rem auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem; /* Adds space around the content inside the div */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
   cursor: pointer;
-  }
+  border: none;
+}
 
-.option p {text-align: left;}
+.option p {
+  text-align: left;
+}
 
-.question p {color:#F1F1F1;}
+.question p {
+  color: #F1F1F1;
+}
 
-.transition {width: 600px;
-  text-align: centre;
-    margin: 0 auto;
-    border-radius: 5px;
-   background-color: white;
-   margin: 1rem;
-   margin-left: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem; /* Adds space around the content inside the div */
+.transition {
+  width: 600px;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: white;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
   cursor: pointer;
-  }
+}
