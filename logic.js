@@ -1,3 +1,14 @@
+class Question {
+  constructor(question, options, correctAnswer) {
+      this.question = question;
+      this.options = options;
+      this.correctAnswer = correctAnswer;
+  }
+  isCorrect(option) {
+      return this.correctAnswer === option;
+  }
+}
+
 let selectedOption = null;
 let correctAnswer = "D";  // Correct answer for the current question
 
