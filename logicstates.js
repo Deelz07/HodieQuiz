@@ -1,3 +1,4 @@
+//Data class
 class Question {
     constructor(question, options, correctAnswer,feedback) {
         this.question = question;
@@ -10,7 +11,7 @@ class Question {
     }
   }
 
-// Data
+// Initialising Data
 let Q1 = new Question("Q1: According to George Miller's study, how many items can the average person hold in their short-term memory?",
   ["A) 4 ± 2","B) 15 ± 2","C) 12 ± 2","D) 7 ± 2"],"D) 7 ± 2",{correct: "Correct!", incorrect: "Incorrect!"}
 )
@@ -31,92 +32,72 @@ let Q5 = new Question("Q5:What is a suggested method to manage memory limitation
   ["A) Avoid all distractions", "B) Chunk information into manageable pieces.", "C) Rely solely on long-term memory.", "D) Study continuously without breaks."],"B) Chunk information into manageable pieces.",{correct: "Correct!", incorrect: "Incorrect!"})
 
 //Variable declaration
-let questions = [Q1,Q2,Q3,Q4,Q5]
-let selectedOption = null;
-let currentindex = 0;
+let questions = [Q1,Q2,Q3,Q4,Q5] //good
+let selectedOption = null; //good
+let currentindex = 0; //
 let options = null;
 let ptag = null;
 let newtext = null;
-let newsubmit = null;
 const submitButton = document.getElementById('submitButton');
-let isSubmitState = true;
+let isAnswerSubmitted = false; //False only when the answer has been submitted 
 const originallength = questions.length;
 let correctcount = 0;
 
-console.log(submitButton)
 
-submitButton.addEventListener('click', (event)=>{ // Don't understand event parameter here??????
-  if (isSubmitState) {
-    submitAnswer(event);
-  } else {
+submitButton.addEventListener('click', ()=>{ 
+  if (isAnswerSubmitted) {
     nextQuestion();
+  } 
+  else {
+      submitAnswer();
   }
-});
+  });
 
-function normalisetext(text) {
-  return text.trim();
-}
 
+//Initialised via onlick in the HTML document.
 function selectOption(button)  {
   // Deselect the previous option
-  console.log(selectedOption)
   if (selectedOption) {
-    selectedOption.style.backgroundColor = "" // How does this work??
+    selectedOption.style.backgroundColor = "" //Set current button back to default colour (Visually unselects it)
   }
-  selectedOption = button;
-  selectedOption.style.backgroundColor = '#c3e3f6';
+  selectedOption = button; //logically selects new button
+  selectedOption.style.backgroundColor = '#c3e3f6'; //Visually selects new button
 }
 
 
-
-
-function submitAnswer(event) {
-
-  console.log(event)
-
-
-
+function submitAnswer() {
   options = document.querySelectorAll('.option');
-  newsubmit = event.target;
-  console.log(newsubmit)
 
   if (selectedOption) {
     // Check if the selected option is correct
-    if (questions[currentindex].isCorrect(normalisetext(selectedOption.textContent))) {
+    if (questions[currentindex].isCorrect(selectedOption.textContent.trim())) {
       selectedOption.style.backgroundColor = '#32CD32'; // Green for correct
     } else {
-      console.log(questions.length)
       questions.push(questions[currentindex])
-      console.log(questions.length)
       selectedOption.style.backgroundColor = 'rgb(250,10,10)'; // Red for incorrect
 
       // Loop through all options to check if any other option is correct
       for (let i = 0; i < options.length; i++) {
-        if (questions[currentindex].isCorrect(normalisetext(options[i].textContent))) {
+        if (questions[currentindex].isCorrect(options[i].textContent.trim())) {
           options[i].style.backgroundColor = '#32CD32'; // Highlight correct options
         }
       }
     }
 
     // Change the button text to "Next"
-    // ptag = newsubmit.querySelector('p');
-    // console.log(ptag)
-    newsubmit.textContent = "Next";
+    submitButton.textContent = "Next";
 
     // Disable all options after the answer is submitted
     options.forEach(option => option.disabled = true);
 
     // Change state from submitAnswer to nextQuestion
-    isSubmitState = false;
+    isAnswerSubmitted = true;
   }
-
-  
 }
 
   
 
 function nextQuestion() {
-  console.log(currentindex+1,questions.length)
   if (currentindex+1 < questions.length) {
     currentindex += 1;
     if (currentindex==originallength) {
@@ -133,18 +114,15 @@ function nextQuestion() {
     for (let i = 0; i < options.length; i++) {
       let newtext = questions[currentindex].options[i];
       let ptag = options[i].querySelector('p');
-      ptag.innerHTML = normalisetext(newtext); // Update option text
+      ptag.innerHTML = newtext.trim(); // Update option text
     }
 
     // Reset the button text back to "Submit"
-    newsubmit = document.getElementById('submitButton');
-    console.log(newsubmit)
 
-    console.log(newsubmit);
-    newsubmit.innerHTML = "Submit";
+    submitButton.innerHTML = "Submit";
 
-    // Change state back to the submit state
-    isSubmitState = true;
+    // Change state back to not submitted state
+    isAnswerSubmitted = false;
 
     // Reset selectedOption for the next question
     selectedOption = null;
