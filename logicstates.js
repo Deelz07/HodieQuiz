@@ -10,6 +10,7 @@ class Question {
     }
   }
 
+// Data
 let Q1 = new Question("Q1: According to George Miller's study, how many items can the average person hold in their short-term memory?",
   ["A) 4 ± 2","B) 15 ± 2","C) 12 ± 2","D) 7 ± 2"],"D) 7 ± 2",{correct: "Correct!", incorrect: "Incorrect!"}
 )
@@ -28,9 +29,9 @@ let Q4 = new Question("Q4: Which of these is NOT an example of chunking? ",
 
 let Q5 = new Question("Q5:What is a suggested method to manage memory limitations and information overload?",
   ["A) Avoid all distractions", "B) Chunk information into manageable pieces.", "C) Rely solely on long-term memory.", "D) Study continuously without breaks."],"B) Chunk information into manageable pieces.",{correct: "Correct!", incorrect: "Incorrect!"})
+
+//Variable declaration
 let questions = [Q1,Q2,Q3,Q4,Q5]
-
-
 let selectedOption = null;
 let currentindex = 0;
 let options = null;
