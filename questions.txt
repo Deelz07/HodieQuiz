@@ -1,10 +1,10 @@
 Q1: According to George Miller's study, how many items can the average person hold in their short-term memory? 
 A) 4 ± 2 
 B) 7 ± 2 
-C) 12 ± 2 
-D) 15 ± 2 
+C) 14 ± 2 
+D) 18 ± 2 
 
-Auditory hint: Think about how you remember a phone number or a long password. Instead of trying to recall every digit individually, what’s a trick you might use to make it easier?" 
+Auditory hint: Phone number (excluding the area code) are designed with this consideration in mind.
 
 Q2: What is the term for grouping information into meaningful units to enhance memory capacity? 
 A) Categorizing 
