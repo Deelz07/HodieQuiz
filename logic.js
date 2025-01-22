@@ -56,7 +56,7 @@ const submitButton = document.getElementById('submitButton');
 let isAnswerSubmitted = false; //False only when the answer has been submitted 
 const originallength = questions.length;
 let correctcount = 0;
-const hintselector = document.querySelector('#hint-selector')
+const hintselector = document.querySelector('.hint-selector')
 const hintmessage = document.querySelector('.feedback')
 
 
@@ -114,6 +114,8 @@ function submitAnswer() {
     // Change state from submitAnswer to nextQuestion
     isAnswerSubmitted = true;
   }
+
+  if (currentindex==questions.length)
 }
 
   
@@ -127,6 +129,10 @@ function nextQuestion() {
     if (currentindex>=originallength) {
       document.body.style.backgroundColor = "#d5cef1"
       hintselector.style.visibility = 'visible';
+    }
+
+    if (currentindex>=originallength) {
+      document.
     }
 
     // Reset options to be clickable and change back to default colors

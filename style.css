@@ -9,6 +9,10 @@ p {
   color: black;
   text-align: center;
 }
+.visible {
+  background-color: white;
+  
+}
 
 .question {
   width: 50%;
@@ -37,7 +41,6 @@ p {
   text-align: left;
   margin: 10px 0;
   border-radius: 5px;
-  background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 0.5rem;
   cursor: pointer;
@@ -70,7 +73,6 @@ p {
   border: black;
   margin: 50px;
   padding: 0.5rem;
-  background-color: white;
 
   /*
   display: block;
@@ -87,9 +89,10 @@ p {
   padding-bottom: 0.5cm; */
 }
 
-#hint-selector {
+.hint-selector.visible {
   visibility:hidden;
 }
-.hint {
+
+.feedback.visible {
   visibility: hidden;
 }

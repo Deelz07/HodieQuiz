@@ -8,38 +8,38 @@
   <title>Quiz</title>
 </head>
 <body>
-  <div class="flex-container">
-  <div class="question"> 
+  <div class="flex-container invisible">
+  <div class="question visible"> 
     <p id="question-text">Q1: According to George Miller's study, how many items can the average person hold in their short-term memory?</p>
   </div>
   
   <div id="options">
-    <button class="option" onclick="selectOption(this)">
+    <button class="option visible" onclick="selectOption(this)">
       <p>A) 4 ± 2</p>
     </button>
-    <button class="option" onclick="selectOption(this)">
+    <button class="option visible" onclick="selectOption(this)">
       <p>B) 15 ± 2</p>
     </button>
-    <button class="option" onclick="selectOption(this)">
+    <button class="option visible" onclick="selectOption(this)">
       <p>C) 12 ± 2</p>
     </button>
-    <button class="option" onclick="selectOption(this)">
+    <button class="option visible" onclick="selectOption(this)">
       <p id="OptionD">D) 7 ± 2</p>
     </button>
   </div>
 </div>
   
-<div class="settings-container">
-  <button class="transition" id = "submitButton">
+<div class="settings-container invisible">
+  <button class="transition visible" id = "submitButton">
     Submit
   </button>
 
-  <button id="hint-selector">
+  <button class="hint-selector visible">
     Hint
   </button>
 </div>
 
-<div class="hint feedback">
+<div class="feedback visible">
   Hello
 </div>
 
