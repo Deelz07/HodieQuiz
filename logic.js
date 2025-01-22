@@ -115,7 +115,9 @@ function submitAnswer() {
     isAnswerSubmitted = true;
   }
 
-  if (currentindex==questions.length)
+  // if (currentindex==questions.length) {
+
+  // }
 }
 
   
@@ -131,9 +133,6 @@ function nextQuestion() {
       hintselector.style.visibility = 'visible';
     }
 
-    if (currentindex>=originallength) {
-      document.
-    }
 
     // Reset options to be clickable and change back to default colors
     options.forEach(option => {
