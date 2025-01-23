@@ -49,15 +49,16 @@ console.log(Q1.hint)
 let questions = [Q1,Q2,Q3,Q4,Q5] //good
 let selectedOption = null; //good
 let currentindex = 0; //
-let options = null;
 let ptag = null;
 let newtext = null;
 const submitButton = document.getElementById('submitButton');
 let isAnswerSubmitted = false; //False only when the answer has been submitted 
 const originallength = questions.length;
 let correctcount = 0;
-const hintselector = document.querySelector('.hint-selector')
+const hintselector = document.querySelector('.hint')
 const hintmessage = document.querySelector('.feedback')
+const options = document.querySelectorAll('.option');
+const question = document.querySelector('.question')
 
 
 submitButton.addEventListener('click', ()=>{ 
@@ -82,7 +83,7 @@ function selectOption(button)  {
 
 
 function submitAnswer() {
-  options = document.querySelectorAll('.option');
+
   if (currentindex>=originallength)
   {hintselector.style.visibility = 'hidden';
     hintmessage.style.visibility = 'hidden';
@@ -115,9 +116,11 @@ function submitAnswer() {
     isAnswerSubmitted = true;
   }
 
-  // if (currentindex==questions.length) {
-
-  // }
+  // Need to add some sort of end screen here//
+  if (currentindex==questions.length-1) {
+    console.log()
+    document.body.innerHTML = "";
+  }
 }
 
   
@@ -143,8 +146,7 @@ function nextQuestion() {
     // Update the question and options on the page
     for (let i = 0; i < options.length; i++) {
       let newtext = questions[currentindex].options[i];
-      let ptag = options[i].querySelector('p');
-      ptag.textContent = newtext.trim(); // Update option text
+      options[i].textContent = newtext.trim(); // Update option text
     }
 
     // Reset the button text back to "Submit"
@@ -155,10 +157,11 @@ function nextQuestion() {
 
     // Reset selectedOption for the next question
     selectedOption = null;
-    console.log(selectedOption)
 
-    question = document.querySelector('#question-text');
     question.textContent = questions[currentindex].question
+    console.log(currentindex)
+    console.log(questions[currentindex].question)
+    console.log(question.textContent)
   }
   //Add else functionality: End of quiz
 

@@ -1,98 +1,79 @@
-* {font-size: 16px;
-}
 
+
+/* Ensures padding and border are included in the default box size */
+/* Default is box-sizing: content-box */
+* {box-sizing: border-box
+} 
+
+/* Sets a default font size as well as creating a MaxMe
+inpired background-colour */
 body {
   background-color: #FCF9F2;
+  font-size: 100%
 }
 
-p {
-  color: black;
-  text-align: center;
-}
-.visible {
+/* Makes all visible buttons have the same back-ground colour */
+.question,.option,.hint,.feedback,.transition {
   background-color: white;
-  
 }
 
+/* */
 .question {
-  width: 50%;
-  margin: 0 auto;
-  border-radius: 5px;
+  width: 70%;
+  height:15vh;
+  margin: 0.4em auto; /*VerticallyHorizontally centres the text*/ 
+  border-radius: 0.4em; /* How rounded the corners of the block are.*/
   background-color: #F24A0D;
-  margin: 1rem auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
-  font-size:200px;
+  box-shadow: 0 0.5em 0.5em rgba(0,0,0,0.2); /* Creates a shadow around the box*/
+  padding: 1rem;
+  font-size: 1.1em;
+  color: white
 }
 
 #options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
-  width:50%
+  display: flex; /* What does this do??*/
+  flex-direction: column; /* What does this do??*/
+  align-items: center; /* What does this do??*/
 }
 
 
 .option {
-  display: block;
-  width: 50vw;
-  text-align: left;
-  margin: 10px 0;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
+  font-size: 1.1em;
+  text-align: left; 
+  margin: 0.4em auto; /* What does this do??*/
+  border-radius: 0.4em; 
+  box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.2); 
   cursor: pointer;
-  border: none;
+  border: none; /* What does this do??*/
   align-items: center;
+  width:70%;
+  height: 10vh
 }
-
-
-.option p {
-  text-align: left;
-}
-
-.question p {
-  color: #F1F1F1;
-}
-
-
 
 
 
 .settings-container {
-  display: flex;
+  display: flex; /* What does this do??*/
 
 }
 
 .settings-container button {
-  flex: 1;
+  flex: 1; /* What does this do??*/
   cursor:pointer;
-  width:300px;
+  width:25%;
   border: black;
-  margin: 50px;
+  margin: 1em 1em;
   padding: 0.5rem;
-
-  /*
-  display: block;
-  width: 100%;
-  max-width: 600px;
-  text-align: left;
-  margin: 10px 0;
-  border-radius: 5px;
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: none;
-  width: 300px;
-  padding-top: 0.5cm;
-  padding-bottom: 0.5cm; */
+  font-size: 1.1rem;
 }
 
-.hint-selector.visible {
+.hint {
   visibility:hidden;
 }
 
-.feedback.visible {
+.feedback {
   visibility: hidden;
+  width:90%;
+  margin: 1em auto;
+
 }
