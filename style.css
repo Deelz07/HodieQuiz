@@ -2,14 +2,14 @@
 
 /* Ensures padding and border are included in the default box size */
 /* Default is box-sizing: content-box */
-* {box-sizing: border-box
+* {box-sizing: border-box;
 } 
 
 /* Sets a default font size as well as creating a MaxMe
 inpired background-colour */
 body {
   background-color: #FCF9F2;
-  font-size: 100%
+  font-size: 100%;
 }
 
 /* Makes all visible buttons have the same back-ground colour */
@@ -20,14 +20,14 @@ body {
 /* */
 .question {
   width: 70%;
-  height:15vh;
+  /* height:20%;*/
   margin: 0.4em auto; /*VerticallyHorizontally centres the text*/ 
   border-radius: 0.4em; /* How rounded the corners of the block are.*/
   background-color: #F24A0D;
   box-shadow: 0 0.5em 0.5em rgba(0,0,0,0.2); /* Creates a shadow around the box*/
   padding: 1rem;
   font-size: 1.1em;
-  color: white
+  color: white;
 }
 
 #options {
@@ -47,7 +47,7 @@ body {
   border: none; /* What does this do??*/
   align-items: center;
   width:70%;
-  height: 10vh
+  height: 10vh; /* This might be a concern on phones*/
 }
 
 
